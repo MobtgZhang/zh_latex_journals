@@ -1,12 +1,14 @@
 % \documentstyle[twoside,def-head,amstola,epsfig]{ctexart}
-\documentclass[twoside,a4paper]{ctexart}
-\usepackage{epsfig}
+\documentclass[twoside,a4paper,UTF8]{ctexart}
+\usepackage{amsmath,amssymb}            % 用于数学环境和符号
+\usepackage{graphicx}           % 用于图形导入（替代epsfig，可处理多种格式图片）
+\usepackage{fancyhdr}
+\usepackage{fontenc}
 %--------------------------Page Format--------------------------
 %\headsep 0.5 true cm
 \headsep0.12true cm
 \voffset=0pt
 \topmargin 0pt
-\input amssym.def
 \oddsidemargin 0pt
 \footskip 2mm
 \evensidemargin 0pt
@@ -29,9 +31,8 @@
 %\def\oodfoot{}
 \catcode`\@=12
 %====================================================================
-\input cyracc.def
-  \font\tencyr=wncyr10
-  \def\cyr{\tencyr\cyracc} %这三条语句用来调用斯拉夫字库, 包括俄文
+\font\tencyr=wncyr10
+\def\cyr{\tencyr\cyracc} %这三条语句用来调用斯拉夫字库, 包括俄文
 \font\one=cmbx10 scaled\magstep4
 \font\fif=cmti10 scaled\magstep1
 \font\fiv=cmti10 scaled\magstep5
@@ -85,12 +86,18 @@
 \def\tri{\triangle}
 \def\Si{\Sigma}
 \def\U{{\cal U}}
-
+\renewcommand{\arraystretch}{0.9}
+\renewcommand{\arraycolsep}{1pt}
 \def\TT{{\songti\zihao{-5}{刘焕彬, 何穗, 孙六全: 两类新的变参数下降算法及收敛性}}}
 %---------------------------------------------------------------
-\def\evenhead{{\protect{\zihao{-5}\songti \hfill  应 \quad  用 \quad  数
- \quad  学 \quad  学 \quad  报} \hfill 34\,{\zihao{-5}\songti  卷}}}
-\def\oddhead{{\protect 5\,{\zihao{-5}\songti  期} \hfill \TT \hfill}}
+\fancypagestyle{fancy}{
+  \fancyhf{}
+  \fancyhead[CE]{\protect{\zihao{-5}\songti \hfill  应 \quad  用 \quad  数
+  \quad  学 \quad  学 \quad  报} \hfill 34\,{\zihao{-5}\songti  卷}}
+  \fancyhead[CO]{\protect 5\,{\zihao{-5}\songti  期} \hfill \TT \hfill}
+}
+\pagestyle{fancy} % 然后按照需求设置页眉和页脚格式
+
 %---------------------------------------------------------------
 
 %-----------------------use-------------------
@@ -164,7 +171,7 @@
 
 \
 
-\songti\zihao{8}\ziju{0.07}
+\songti\zihao{-5}\ziju{0.07}
 
 “文章正文”
 
@@ -229,10 +236,7 @@
     
 
  
- \end{document}
+\end{document}
 
 
-$A=\mathop \cup \limits_k A_k $
 
-\renewcommand{\arraystretch}{0.9}
-\renewcommand{\arraycolsep}{1pt}
