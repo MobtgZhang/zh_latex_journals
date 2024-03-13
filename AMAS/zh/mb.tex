@@ -1,0 +1,238 @@
+% \documentstyle[twoside,def-head,amstola,epsfig]{ctexart}
+\documentclass[twoside,a4paper]{ctexart}
+\usepackage{epsfig}
+%--------------------------Page Format--------------------------
+%\headsep 0.5 true cm
+\headsep0.12true cm
+\voffset=0pt
+\topmargin 0pt
+\input amssym.def
+\oddsidemargin 0pt
+\footskip 2mm
+\evensidemargin 0pt
+\textheight 21 true cm
+\textwidth 14 true cm
+\renewcommand\baselinestretch{1.3}
+\setcounter{page}{1}
+%\parskip 0.2cm
+\parindent 2\ccwd
+\nofiles
+%---------------------------------------------------------------
+\begin{document}
+%\raggedleft
+\abovedisplayskip=10.0pt plus 2.0pt minus 2.0pt
+\belowdisplayskip=10.0pt plus 2.0pt minus 2.0pt
+%====================================================================
+\catcode`@=11
+\long\def\@makefntext#1{\parindent 1em\noindent \hbox to 0pt{\hss$^{}$}#1}
+%\def\evenfoot{}
+%\def\oodfoot{}
+\catcode`\@=12
+%====================================================================
+\input cyracc.def
+  \font\tencyr=wncyr10
+  \def\cyr{\tencyr\cyracc} %这三条语句用来调用斯拉夫字库, 包括俄文
+\font\one=cmbx10 scaled\magstep4
+\font\fif=cmti10 scaled\magstep1
+\font\fiv=cmti10 scaled\magstep5
+\font\ooo=cmsy10 scaled\magstep3
+\font\two=cmcsc10
+\font\three=cmti8
+\font\ss=cmsl8
+\font\bb=cmbx8
+\font\four=cmbx10 scaled\magstep1
+\font\six=cmti10 scaled\magstep1
+\font\small=cmr8
+
+\def\ol{\overline}
+\def\T{\text{T}}
+\def\t{\text}
+\def\d{{\text{d}}}
+\def\om{\omega}
+\def\Om{\Omega}
+\def\sub{\subset}
+\def\al{\alpha}
+\def\dt{\delta}
+\def\ep{\varepsilon}
+\def\eq{\equiv}
+\def\la{\lambda}
+\def\lg{\langle}
+\def\rg{\rangle}
+\def\e{{{\text{e}}}}
+\def\R{{\Bbb R}}
+\def\C{{\Bbb C}}
+\def\A{{\cal A}}
+\def\B{{\cal B}}
+\def\vp{\varphi}
+\def\pt{\partial}
+\def\na{\nabla}
+\def\Dt{\Delta}
+\def\pma{\pmatrix}
+\def\epm{\endpmatrix}
+\def\Ga{\Gamma}
+\def\for{\forall}
+\def\si{\sigma}
+\def\wt{\widetilde}
+\def\tha{\theta}
+\def\V{{\cal V}}
+\def\be{\beta}
+\def\bm{\bmatrix}
+\def\ebm{\endbmatrix}
+\def\ga{\gamma}
+\def\us{\underset}
+\def\os{\overset}
+\def\1{{\pmb 1}}
+\def\tri{\triangle}
+\def\Si{\Sigma}
+\def\U{{\cal U}}
+
+\def\TT{{\songti\zihao{-5}{刘焕彬, 何穗, 孙六全: 两类新的变参数下降算法及收敛性}}}
+%---------------------------------------------------------------
+\def\evenhead{{\protect{\zihao{-5}\songti \hfill  应 \quad  用 \quad  数
+ \quad  学 \quad  学 \quad  报} \hfill 34\,{\zihao{-5}\songti  卷}}}
+\def\oddhead{{\protect 5\,{\zihao{-5}\songti  期} \hfill \TT \hfill}}
+%---------------------------------------------------------------
+
+%-----------------------use-------------------
+
+%-----------------------enduse-------------------------
+\vspace*{-11.5mm}
+
+\thispagestyle{empty}
+
+\noindent
+\hbox to \textwidth{\rm{\zihao{-5}\songti  第}\, 34\, {\zihao{-5}\songti  卷 \ 
+ 第}\, 5\, {\zihao{-5}\songti  期}\hfill
+{\zihao{-4}  应 \  用 \  数 \  学 \  学 \  报}\hfill Vol.\, 34 \ No.\, 5}
+\vskip -0.2mm
+\par\noindent
+\hbox to \textwidth{\rm 2011 \,{\zihao{-5}\songti 年}\, 9\, {\zihao{-5}\songti
+ 月}\hfill ACTA MATHEMATICAE APPLICATAE SINICA\hfill Sep., 2011}
+\vskip -0.3mm
+\par\noindent
+\rule[1.5mm]{\textwidth}{0.3pt}\hspace*{-\textwidth}\rule[0.7mm] 
+{\textwidth}{0.3pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ziju{0.025}
+
+\vbox{\vskip38pt}
+\centerline{\heiti\zihao{-2}{复发事件下一般半参数比率回归模型$^{^{^{^{\hbox{$\ast$}}}}}$}}
+%\vskip2pt
+%\c{\heiti\zihao{-2}{{\one Strum-Liouville}奇异边值问题中的应用$^{^{^{^{\hbox{$\ast$}}}}}$}}
+\footnotetext{\songti\zihao{-6}{本文} \small 2006 \songti\zihao{-6}{年} 
+1 \songti\zihao{-6}{月} 9 \songti\zihao{-6}{日收到.}  
+\small 2007 \songti\zihao{-6}{年} 9 \songti\zihao{-6}{月} 24 
+\songti\zihao{-6}{日收到修改稿.}}
+\footnotetext{$^{\ast}$ 
+\songti\zihao{-6}{国家自然科学基金(10571169,10731010), 国家重点基础研究发展计划(2007CB814902)
+以及湖北省高等学校优秀中青年科技创新团队项目经费(03BA85)资助项目.}}
+\vskip12pt
+\centerline{\fangsong\zihao{-4}{刘焕彬}}
+\vskip5pt
+\centerline{({\zihao{-6}{黄冈师范学院数学系, 黄冈}} {\small 438000})}
+\vskip7pt
+\centerline{\fangsong\zihao{-4}{何 \ \ 穗}}
+\vskip5pt
+\centerline{({\zihao{-6}{华中师范大学数学与统计学学院, 武汉}} {\small 430079})}
+\vskip7pt
+\centerline{\fangsong\zihao{-4}{孙六全}}
+\vskip5pt
+\centerline{({\zihao{-6}{中国科学院数学与系统科学研究院应用数学研究所, 北京}} {\small 100190})} 
+\vskip2pt
+\centerline{({\small E-mail: slq@amt.ac.cn})}
+
+\vskip25pt
+
+{\narrower\songti\zihao{-5}\small 
+\noindent{\heiti 摘 \ \  要}\quad {本文在复发事件数据下, 研究了一个一般半参数比率回归模型中参数的估计问题, 
+给出了该模型中未知参数和非参数函数的一种估计方法, 并证明了这些估计的相合性和渐近正态性.} 
+
+\vskip5pt
+
+\noindent{\heiti 关键词}\quad 半参数比率模型; 复发事件; 边际回归; 估计方程
+
+\noindent{\heiti\bf MR(2000)主题分类}\ \ 62G05; 62N01 
+
+\noindent{\heiti 中图分类}\ \ O212.7
+
+}
+
+\vskip25pt
+
+\noindent{\four 1 } \ {\heiti\zihao{-4} 引言}
+
+\
+
+\songti\zihao{8}\ziju{0.07}
+
+“文章正文”
+
+\
+
+\centerline{\heiti  参 \quad  考 \quad  文 \quad  献}
+
+\
+
+\begin{thebibliography}{99}
+\songti\zihao{-6}\small
+
+\bibitem[1]{ref1} Wang Z Q, Willem M. \ Singular Minimization Problems. \ {\three J. Differential Equations}, 2000, 161(2): 307--320 (杂志的模式)
+
+\bibitem[2]{ref2} Willem M. \ Minimax Theorems. \ Boston: Birkhauser, 1996 (专著的模式)
+
+\bibitem[3]{ref3}   
+
+\end{thebibliography}
+
+
+\vbox{\vskip15pt}
+
+\centerline{\four A General Class of Semiparametric Rates Models}  
+\vskip2pt
+\centerline{\four for Recurrent Event Data}
+%\vskip2pt
+%\c{\four }
+\vskip12pt
+\centerline{\two LIU Huanbin}
+\vskip5pt
+\centerline{({\three Department of Mathematics, Huanggang Normal University, Huanggang} {\small 438000})}
+\vskip7pt
+\centerline{\two HE Sui}
+\vskip5pt
+\centerline{({\three College of Mathematics and Statistics, Central China Normal University, Wuhan} {\small 430079})}    
+\vskip7pt
+\centerline{\two SUN Liuquan}
+\vskip5pt
+\centerline{({\three Academy of Mathematics and System Sciences, Chinese Academy of Sciences,Beijing} {\small 100190})}
+\vskip2pt
+\centerline{({\three E-mail: slq@amt.ac.cn})}
+
+\
+
+\noindent{\bf Abstract}\quad In this article, we propose a general class of semiparametric rates
+ models for recurrent event data, which includes the proportional rates model and
+ a semiparametric additive rates model  as special cases. For the inference on the model parameters,
+ estimating equation approaches are developed. The consistency and asymptotic normality properties of
+ the proposed estimators are established. 
+
+\vskip5pt
+
+\noindent{\bf Key words}\quad semiparametric rates models; recurrent event; marginal regression; 
+
+\hskip1.54cm estimating equation
+
+\noindent{\bf MR(2000) Subject Classification}\quad 62G05; 62N015
+
+\noindent{\bf Chinese Library Classification}\quad O212.7
+
+    
+
+ 
+ \end{document}
+
+
+$A=\mathop \cup \limits_k A_k $
+
+\renewcommand{\arraystretch}{0.9}
+\renewcommand{\arraycolsep}{1pt}
