@@ -1,4 +1,4 @@
-# 改良版计算机学报LaTeX模板
+# 计算机学报LaTeX模板
 本项目是系统科学与数学期刊的中文模板改写的兼容`xelatex`编译的框架
 OverLeaf 部署地址为：[计算机学报OVERLEAF](https://www.overleaf.com/read/bdvrsjqxsbcb#a9ced8)
 
