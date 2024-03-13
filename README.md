@@ -7,9 +7,10 @@
 + [自动化学报:AAS](AAS/README.md)；
 + [应用数学学报:AMAS](AMAS/README.md)；
 + [计算机学报:JSC](JSC/README.md)；
-+ [系统科学与数学:JSSM](JSSM/README.md)。
++ [系统科学与数学:JSSM](JSSM/README.md)；
++ [应用概率统计杂志:APS](APS/README.md)；
 
-希望广大科研者参与到这个项目中。
+希望广大科研者参与到这个项目中维护。
 
 # 遵循的开源协议
 
