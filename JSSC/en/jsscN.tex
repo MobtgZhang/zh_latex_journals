@@ -1,0 +1,91 @@
+\pagestyle{empty} \oddsidemargin -0.54cm \headheight=16pt
+\headsep=20pt
+%\footheight=0pt
+\footskip=20pt \topmargin 0.79cm \evensidemargin 0pt \textwidth=14.5
+true cm \textheight=20.6 true cm
+
+\abovedisplayskip 6pt plus 2pt minus 2pt \belowdisplayskip 6pt plus
+2pt minus 2pt
+%The distance between the formula and text
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+%------------------------------------------------------------
+%------------------------------------------------------------
+\makeatletter
+\def\@oddfoot{\hfill}
+\newcount\shumeicount
+%------------------------------------------------------------
+% \setshumei{title page heading}{odd page heading}{even page heading}
+\def\setshumei#1#2#3{%
+  \shumeicount=\count0
+  \def\@oddhead{%
+    \raise-5pt\hbox to0pt{\vrule width\hsize height 0pt depth 0.4pt\hss}\relax
+    \ifnum \shumeicount=\count0
+      \raise-7pt\hbox to0pt{\vrule width\hsize height 0pt depth 0.4pt\hss}\relax
+      #1
+    \else
+      \ifodd\count0
+        #2
+      \else
+        #3
+       \fi
+     \fi
+  }%
+}
+%\catcode`@=\active
+\makeatother
+%------------------------------------------------------------
+\makeatletter
+\def\@oddfoot{\hfill}
+\newcount\shujiaocount
+\def\setshujiao{%
+  \shujiaocount=\count0
+  \def\@oddfoot{%
+      \ifodd\count0
+         %\hfill\hbox to0pt{\hss\epsfig{figure=spr.eps,height=12pt}}
+      \else
+        %\epsfig{figure=spr.eps,height=12pt}
+      \fi
+  }%
+}
+%\catcode`@=\active
+\makeatother
+%----------------- \biaoti{Title}{Author}{}{}-------------
+\def\title#1#2#3#4{{
+  \vspace*{0.3cm}
+  \begin{flushleft} \Large\bf #1\end{flushleft}
+  \vspace*{-0.2cm}
+      \begin{flushleft}
+      \bf #2
+      \end{flushleft}
+      \footnotetext{\hspace{-6mm} #3\\ #4}}}
+%------------\dshm{Year}{Vol.}{Title}{Author}-------------
+
+\def\dshm#1#2#3#4#5
+{\setshumei{J Syst Sci Complex #1, #2(#3):
+{\thepage--\pageref{LastPage}}\hfill}
+            {\hfill {\small #4}\hfill\hbox to0pt{\hss\thepage}}
+            {\hbox to0pt{\thepage\hss}\hfill {\small #5}\hfill
+            }
+            \setshujiao}
+%----------------------------------------------------------------------
+\def\drd#1#2
+{{\vskip 1cm\small \begin{flushleft}
+ #1 \\
+ #2\\
+%Accepted: #3/~Published online: #4\\
+\copyright The Editorial Office of JSSC \&  Springer-Verlag GmbH
+Germany 2024
+\end{flushleft}}}
+%----------------------------------------------------------------------
+%----------------------------------------------------------------------
+\def\It{\it}
+\def\hat{\widehat}
+\def\tilde{\widetilde}
+\def\bar{\overline}
+\def\epsilon{\varepsilon}
+\def\proof{\vspace{1mm}\indent {\it Proof}\quad}
+
+
+%----------------------------------------------------------------------
+%----------------------------------------------------------------------
