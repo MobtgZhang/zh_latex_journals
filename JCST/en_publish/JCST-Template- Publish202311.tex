@@ -1,0 +1,489 @@
+\documentclass[twoside]{article}
+\usepackage{amsfonts,amssymb,amsbsy,textcomp,marvosym,picins,amsmath,caption,threeparttable,amsthm,subfigure,float,lastpage,lscape}
+\usepackage{eurosym,mathrsfs,fancyhdr,CJK,multicol,graphics,indentfirst,color,bm,upgreek,booktabs,graphicx,multirow,warpcol,epstopdf}
+\usepackage[bookmarksnumbered=true,bookmarksopen=true,colorlinks=true,pdfborder=001,urlcolor=blue,linkcolor=blue,anchorcolor=blue,citecolor=blue]{hyperref}
+
+%\usepackage[noend]{algorithm}
+%\usepackage[noend]{algorithmic}
+%\usepackage[lined,algonl,boxed]{algorithm2e}
+\looseness=-1
+%------------Page layout and margin and Headrule-------------
+\headsep=5mm \headheight=4mm \topmargin=-.8cm \oddsidemargin=-.8cm
+\evensidemargin=-.8cm \marginparwidth=0pt \marginparsep= 0pt
+\marginparpush=0pt \textheight=23.1cm \textwidth=17.5cm \footskip=8mm
+\columnsep=7mm \setlength{\doublerulesep}{0.1pt}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\footnotesep=3.5mm\arraycolsep=2pt
+\font\tenrm=cmr10
+%===========================================================
+\def\footnoterule{\kern 1mm \hrule width 10cm \kern 2mm}
+\def\rmd{{\rm d}} \def\rmi{{\rm i}} \def\rme{{\rm e}}
+\def\sj#1{$^{[#1]}$}\def\lt{\left}\def\rt{\right}
+\renewcommand{\captionfont}{\footnotesize}
+\renewcommand\tablename{\bf \footnotesize Table}
+\renewcommand\figurename{\footnotesize Fig.\!\!}
+\captionsetup{labelsep=period}%
+\captionsetup[longtable]{labelsep=period}%
+\allowdisplaybreaks
+\sloppy
+\renewcommand{\headrulewidth}{0pt}
+\catcode`@=11
+\def\title#1{\vspace{3mm}\begin{flushleft}\vglue-.1cm\Large\bf\boldmath\protect\baselineskip=18pt plus.2pt minus.1pt #1
+\end{flushleft}\vspace{1mm} }
+\def\author#1{\begin{flushleft}\normalsize #1\end{flushleft}\vspace*{-4pt} \vspace{3mm}}
+\def\address#1#2{\begin{flushleft}\vglue-.35cm${}^{#1}$\small\it #2\vglue-.35cm\end{flushleft}\vspace{-2mm}\par}
+\def\jz#1#2{{$^{\footnotesize\textcircled{\tiny #1}}$\footnotetext{$^{\footnotesize\textcircled{\tiny #1}}$#2}}}
+\def\jzd#1#2{$^{\footnotesize\textcircled{\tiny{#1}}}$\footnotetext{$^{\footnotesize\textcircled{\tiny{#1}}}$#2}}
+\catcode`@=11
+\def\section{\@startsection{section}{1}{\z@}%
+ %{-3.5ex \@plus -1ex \@minus -.2ex}%
+ {-3ex \@plus -.3ex \@minus -.2ex}%
+ {2.2ex \@plus.2ex}%
+{\normalfont\normalsize\protect\baselineskip=14.5pt plus.2pt minus.2pt\bfseries}}
+\def\subsection{\@startsection{subsection}{2}{\z@}%
+ %{-3.25ex\@plus -1ex \@minus -.2ex}%
+ {-3ex\@plus -.2ex \@minus -.2ex}%
+ {2ex \@plus.2ex}%
+{\normalfont\normalsize\protect\baselineskip=12.5pt plus.2pt minus.2pt\bfseries}}
+\def\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+ %{-3.25ex\@plus -1ex \@minus -.2ex}%
+ {-2.2ex\@plus -.21ex \@minus -.2ex}%
+ {1.4ex \@plus.2ex}
+{\normalfont\normalsize\protect\baselineskip=12pt plus.2pt minus.2pt\sl}}
+\def\proofname{{\indent \it Proof.}}
+%===========================================================���ϲ���
+
+\pagestyle{fancy}
+\fancyhf{}% ���ҳüҳ��
+\fancyhead[LO]{\small\sl First Author {\it et al.}: Shortened Title Within 45 Characters}%
+\fancyhead[RO]{\small\thepage}
+\fancyhead[LE]{\small\thepage}
+\fancyhead[RE]{\small\sl J. Comput. Sci. \& Technol., January 2018,
+Vol., No.}
+\setcounter{page}{1}
+\begin{document}
+\begin{CJK*}{GBK}{song}
+\thispagestyle{empty}
+\vspace*{-13mm}
+\noindent {\small First Author, Second Author, Third
+Author {\it et al.} Journal of computer science and technology: Instruction for authors.
+JOURNAL OF COMPUTER SCIENCE AND TECHNOLOGY \ 33(1): \thepage--\pageref{last-page}
+\ January 2018. DOI 10.1007/s11390-015-0000-0}
+%===========================================================
+\vspace*{2mm}
+
+\title{Journal of Computer Science and Technology: Instruction for Authors}
+
+\author{First Author[\textcolor{blue}{First-Name Surname}]$^{1,2,*}$ (Chinese Name, if available), Second Author$^{1}$ (Chinese Name, if available), and Third Author$^{2}$ (Chinese Name, if available)}
+
+\address{1}{Institute of Computing Technology, Chinese Academy of Sciences, Beijing 100190, China}
+\address{2}{[\textcolor{blue}{Affiliation, City Postcode, Country}]}
+
+\vspace{2mm}
+
+\noindent E-mail: ***@*********; ***@********* [\textcolor{blue}{Please list the emails of all the authors in order. The domain names of the e-mails should correspond to the authors' affiliations, and any free personal e-mail, e.g., qq.com, 126.com, 163.com, gmail.com, hotmail.com, is not permitted}]\\[-1mm]
+
+\noindent Received July 15, 2018 [\textcolor{blue}{Month Day, Year}]; accepted October 14, 2018 [\textcolor{blue}{Month Day, Year}].\\[1mm]
+
+\let\thefootnote\relax\footnotetext{{}\\[-4mm]\indent\ Regular Paper\\[.5mm]
+%\indent\quad Special Section of CAD/Graphcis 2017\\[.5mm]
+%\indent\quad  A preliminary version of the paper was published in SMP 2014.\\[.5mm]
+\indent\ by the National Natural Science Foundation of China under Grant Nos.~******** and ********, the National High Technology Research and Development 863 Program of China under Grant No.~********, the National Basic Research 973 Program of China under Grant No.~********, and the Natural Science Foundation of Shandong Province of China under Grant No.~*******. \\[.5mm]
+\indent\ $^*$Corresponding Author
+\\[1.2mm]\indent\ $^{\footnotesize\textcircled{\tiny1}}$\href{https://jcst.ict.ac.cn/Guidelines_for_Authors}{https://jcst.ict.ac.cn/Guidelines\_for\_Authors}, Dec. 2023.
+\\[.5mm]\indent\ \copyright Institute of Computing Technology, Chinese Academy of Sciences 2021}
+
+\noindent {\small\bf Abstract} \quad  {\small \textcolor{blue}{Please provide an abstract of 100 to 250 words. The abstract should clearly state the nature and significance of the paper. It must not include undefined abbreviations, mathematical expressions or bibliographic references.}}
+
+\vspace*{3mm}
+
+\noindent{\small\bf Keywords} \quad {\small keyword, keyword, keyword, keyword,
+keyword [\textcolor{blue}{Keywords should closely reflect the topic and should optically
+characterize the paper. Please use about 3--5 keywords or phrases in
+alphabetical order separated by commas.}]}
+
+\vspace*{4mm}
+
+\end{CJK*}
+\baselineskip=15.8pt plus.2pt minus.2pt
+\parskip=0pt plus.2pt minus0.2pt
+\begin{multicols}{2}
+
+\section{Introduction}
+
+Journal of Computer Science and Technology (JCST) is an international forum for scientists and engineers involved in all aspects of computer science and technology to publish high quality, refereed papers. It is an international research journal sponsored by Institute of Computing Technology (ICT), Chinese Academy of Sciences (CAS), and China Computer Federation (CCF). The journal is jointly published by Science Press of China and Springer on a bimonthly basis in English.
+
+The journal offers survey and review articles from experts in the field, promoting insight and understanding of the state of the art, and trends in technology. The contents include original research and innovative applications from all parts of the world. Manuscripts are accepted for review on the understanding that they have not been published, nor are presently submitted for publication in any other journals. Enhanced versions of papers previously published in conference proceedings may be considered provided it is notified when the paper is submitted and the submission to JCST includes enough (more than 50\%) new kernel contribution (not new material).
+
+All the authors should follow JCST's Guidelines for Authors$^{\footnotesize\textcircled{\tiny1}}$, and especially, the authors must fulfill the Ethical Responsibilities of Authors and comply with the Referencing Guidelines.
+
+The coverage of JCST includes computer architecture and systems, artificial intelligence and pattern recognition, computer networks and distributed computing, computer graphics and multimedia, software systems, data management and data mining, theory and algorithms, emerging areas, and more.
+
+\section{Content}
+\subsection{Text}
+
+{\it Text Formatting}. Please refer to JCST Submit/Publish Template (LATEX, WORD) at:  http://jc\-st.ict.ac.cn/EN/column/column111.shtml.
+
+Manuscripts submitted for reviews should follow the JCST Submit Template, and those that have passed the review and are going to be accepted should use the JCST Publish Template.
+
+All elements of formulae should be type-written whenever possible. Use the automatic page numbering function to number the pages. Do not use field functions. Use the table function, not spreadsheets, to make tables. Save your file in TeX or LaTeX files, or docx format (Word 2007 or higher) or doc format (older Word versions). For Word files, please do use the MathType included in the Word template .rar file for equations.
+
+{\it Abbreviations.} Abbreviations should be defined at first mention and used consistently thereafter.
+
+{\it Footnotes}. Footnotes can be used to give additional information, which may include the citation of a reference included in the reference list. They should not consist solely of a reference citation, and they should never include the bibliographic details of a reference. They should also not contain any figures or tables. Footnotes to the text are numbered consecutively. Always use footnotes instead of endnotes.
+
+{\it Acknowledgments}. Upon acceptance of the paper, authors may add acknowledgement of people, grants, funds, etc., which should be placed in a separate section. The names of funding organizations should be written in full.
+
+{\it Biography and Photo}. Upon acceptance of the paper, authors will be asked to provide a short biography and a photo (with resolution = 600 dpi) of each author, to be included at the end of the manuscript.
+
+{\it Scientific Style}. Please always use internationally accepted signs and symbols for units (SI units).
+
+\subsection{References}
+\subsubsection{Citation}
+
+At times, it may be necessary for authors to include another author's material or to reuse portions of their own previously published work.
+
+When an author uses text, charts, photographs, or other graphics from another author's material, the author shall:
+
+1) clearly indicate reused material and provide a full reference to the origin (publication, person, etc.) of the material and
+
+2) obtain written permission from the publisher or, if the reused material has not been published, obtain written permission from the original source.
+
+When an author reuses text, charts, photographs, or other graphics from his/her own previously published material, the author shall:
+
+1) clearly indicate all reused material and provide a full reference to the original publication of the material and
+
+2) if the previously published or submitted material is used as a basis for a new submission, clearly indicate how the new submission differs from the previously published work(s).
+
+Reference citations in the text should be identified by numbers in square
+brackets. Some examples:
+
+1) Negotiation research spans many disciplines [3].
+
+2) This effect has been widely studied [1-3, 7].
+
+\subsubsection{Reference List}
+
+The list of references should only include articles that are cited in the text and that have been published or accepted for publication. Personal communications and unpublished work should only be mentioned in the text using footnotes to give more information. Do not use footnotes or endnotes as a substitute for a reference list.
+
+The references should be listed at the end of the manuscript and numbered in the order they are referred to in the text. For journals the following information should appear: names (including initials of the first names) of all authors, full title of the paper, and journal name, volume, pages and year of publication. For books the following should be listed: author(s), full title, edition, publisher, place of publication and year.
+
+\subsection{Tables}
+
+All tables are numbered using Arabic numerals in the order they are referred to in the text.
+
+Tables should be cited in text in consecutive numerical order. For each table, please supply a table caption (title) explaining the components of the table. Identify any previously published material by giving the original source in the form of a reference at the end of the table caption.
+
+Footnotes to tables should be indicated by ``Note:'' and included beneath the table body.
+
+\subsection{Definitions and Theorems}
+
+{\bf Definition 1} (Name of the Definition). {\it All definitions are numbered using Arabic numerals in the order they are presented in the text.}
+
+{\bf Theorem 1.}  {\it All theorems are numbered using Arabic numerals in the order they are presented in the text.}
+
+\begin{proof}
+Example for a proof.
+\end{proof}
+
+\subsection{Artwork and Illustrations Guidelines}
+\subsubsection{Electronic Figure Submission}
+
+$\bullet$ Supply all figures electronically.
+
+$\bullet$ For vector graphics, the preferred format is EPS; for halftones, please use
+TIFF format. MSOffice files are also acceptable.
+
+$\bullet$ Vector graphics containing fonts must have the fonts embedded in the files.
+
+$\bullet$ Name your figure files with ``Fig'' and the figure number, e.g., Fig1.eps.
+
+\subsubsection{Line Art}
+
+{\bf Definition 2} (Line Art). {\it Lines are black and white graphic with no shading.}
+
+Do not use faint lines and/or lettering and check that all lines and
+lettering within the figures are legible at final size. All lines should be
+at least 0.1 mm (0.3 pt) wide. Scanned line drawings and line drawings in
+bitmap format should have a minimum resolution of 1200 dpi. Vector graphics
+containing fonts must have the fonts embedded in the files.
+
+\subsubsection{Halftone Art}
+
+{\bf Definition 3} (Halftone Art). {\it Halftones include photographs, drawings, or paintings with fine shading, etc.}
+
+If any magnification is used in the photographs, indicate this by using
+scale bars within the figures themselves. Halftones should have a minimum
+resolution of 600 dpi.
+
+\subsubsection{Combination Art}
+
+{\bf Definition 4} (Combination Art). {\it Combination art is combination of halftone and line art, e.g., halftones containing line drawing, extensive lettering, color diagrams, etc. Combination artwork should have a minimum resolution of 600 dpi.}
+
+\subsubsection{Color Art}
+
+If black and white will be shown in the print version, make sure that the main information will still be visible. Many colors are not distinguishable from one another when converted to black and white. A simple way to check this is to make a xerographic copy to see if the necessary distinctions between the different colors are still apparent. If the figures will be printed in black and white, do not refer to color in the captions and text.
+
+Color illustrations should be submitted as RGB (8 bits per channel).
+
+\subsubsection{Figure Lettering}
+
+To add lettering, it is best to use Times New Roman. Please keep lettering consistently sized throughout your final-sized artwork, usually about 8 pt.
+
+Variance of type size within an illustration should be minimal, e.g., do not use 8-pt type on an axis and 20-pt type for the axis label.
+
+Avoid effects such as shading, outline letters, etc. Do not include titles or captions within your illustrations.
+
+\subsubsection{Figure Numbering}
+
+All figures are to be numbered using Arabic numerals in the order they are referred to in the text. Figures should always be cited in text in consecutive numerical order.
+
+Figure parts should be denoted by lowercase letters: (a), (b), (c), etc.
+
+If an appendix appears in your article and it contains one or more figures, number the appendix figures: A1, A2, A3, etc.
+
+\subsubsection{Figure Captions}
+
+Each figure should have a concise caption describing accurately what the figure depicts. Include the captions in the text file of the manuscript, not in the figure file.
+
+Figure captions begin with the term Fig. in bold type, followed by the figure number, also in bold type. No punctuation is to be included after the number, nor is any punctuation to be placed at the end of the caption.
+
+Identify all elements found in the figure in the figure caption; and use boxes, circles, etc., as coordinate points in graphs.
+
+Identify previously published material by giving the original source in the form of a reference citation at the end of the figure caption.
+
+\vspace{1mm}
+
+\begin{center}
+\includegraphics{photo.eps}\\
+\vspace{2mm}
+\parbox[c]{8.3cm}{\footnotesize{Fig.1.~}  Example for inserting a one-column wide figure. }%\vspace*{.2mm}
+\end{center}
+
+\setcounter{figure}{1}
+\begin{figure*}[!tb]
+\centering
+  \subfigure[]{
+    \includegraphics[width=6cm,height=2cm]{photo.eps}}
+  \subfigure[]{
+    \includegraphics[width=6cm,height=2cm]{photo.eps}}
+  \caption{Example for inserting a two-column wide figure. (a) Title of sub-figure (a). (b) Title of sub-figure (b).}
+\end{figure*}
+
+\tabcolsep 12pt
+%\cmidrule(l){2-4}%
+\renewcommand\arraystretch{1.3}
+\begin{center}
+{\footnotesize{\bf Table 1.} \textcolor{red}{C}aption of \textcolor{red}{T}his \textcolor{red}{O}ne-\textcolor{red}{C}olumn \textcolor{red}{W}ide \textcolor{red}{T}able}\\
+\vspace{2mm}
+\footnotesize{
+\begin{tabular*}{\linewidth}{c}\hline\hline\hline
+\\\hline
+\\
+\\\hline\hline\hline
+\end{tabular*}%\vspace*{.2mm}
+\\\vspace{1mm}\parbox{8.3cm}{Note: You may explain the meaning of some special format, e.g., in bold, and/or give the full names of the abbreviations used in the table whose full names have not presented in the text.}
+}
+\end{center}
+
+\vspace{1mm}
+
+\setcounter{table}{1}
+\tabcolsep 9pt
+%\cmidrule(l){2-4}
+\renewcommand\arraystretch{1.3}
+\begin{table*}[!htb]
+\centering
+\caption{\label{3} \textcolor{red}{C}aption of \textcolor{red}{T}his \textcolor{red}{T}able}\vspace{-2mm}
+{\footnotesize
+\begin{tabular*}{\linewidth}{c}\hline\hline\hline
+\\\hline
+\\
+\\
+\\\hline\hline\hline
+\end{tabular*}%\vspace*{.2mm}
+%\\\vspace{1mm}\parbox{17.5cm}{}
+}
+\end{table*}
+\baselineskip=18pt plus.2pt minus.2pt
+\parskip=0pt plus.2pt minus0.2pt
+
+\subsubsection{Placement and Size}
+
+When preparing your figures, size figures to fit in the column width (one-column or two-column as needed).
+
+\subsubsection{Permissions}
+
+If you include figures that have already been published elsewhere, you must obtain permission from the copyright owner(s) for both the print and online format. Please be aware that some publishers do not grant electronic rights for free and that Springer will not be able to refund any costs that may have occurred to receive these permissions. In such cases, material from other sources should be used.
+
+\subsubsection{Accessibility}
+
+In order to give people of all abilities and disabilities access to the content of your figures, please make sure that:
+
+$\bullet$ All figures have descriptive captions;
+
+$\bullet$ Patterns are used instead of or in addition to colors for conveying
+information (colorblind users would then be able to distinguish the visual
+elements);
+
+$\bullet$ Any figure lettering has a contrast ratio of at least 4.5:1.
+
+\section{Electronic Supplementary Material}
+
+Springer accepts electronic multimedia files (animations, movies, audio, etc.) and other supplementary files to be published online along with an article or a book chapter. This feature can add dimension to the author's article, as certain information cannot be printed or is more convenient in electronic form.
+
+We encourage research data to be archived in data repositories wherever
+possible.
+
+\subsection{Submission}
+
+Please supply all supplementary material in standard file formats.
+
+To accommodate user downloads, please keep in mind that larger-sized files may require very long download times and that some users may experience other problems during downloading.
+
+{\it Audio, Video, and Animations.} Aspect ratio: 16:9 or 4:3; maximum file size: 25 GB; minimum video duration: 1 sec; supported file formats: avi, wmv, mp4, mov, m2p, mp2, mpg, mpeg, flv, mxf, mts, m4v, 3gp.
+
+{\it Text and Presentations.} Submit your material in PDF format; .doc or .ppt files are not suitable for long-term viability. A collection of figures may also be combined in a PDF file.
+
+{\it Spreadsheets}. Spreadsheets should be converted to PDF if no interaction with the data is intended. If the readers should be encouraged to make their own calculations, spreadsheets should be submitted as .xls files (MS Excel).
+
+{\it Specialized Formats}. Specialized format such as .pdb (chemical), .wrl (VRML), .nb (Mathematica notebook), and .tex can also be supplied.
+
+{\it Collecting Multiple Files}. It is possible to collect multiple files in a .rar or .gz file.
+
+{\it Numbering}. If supplying any supplementary material, the text must make specific mention of the material as a citation, similar to that of figures and tables. 1) Refer to the supplementary files as ``Online Resource'', e.g., "... as shown in the animation (Online Resource 3)", ``... additional data are given in Online Resource 4''. 2) Name the files consecutively, e.g. ``ESM{\_}3.mpg'', ``ESM{\_}4.pdf''.
+
+{\it Captions}. For each supplementary material, please supply a concise caption describing the content of the file.
+
+{\it Accessibility}. In order to give people of all abilities and disabilities access to the content of your supplementary files, please make sure that: 1) The manuscript contains a descriptive caption for each supplementary material. 2) Video files do not contain anything that flashes more than three times per second (so that users prone to seizures caused by such effects are not put at risk).
+
+\subsection{Highlight}
+
+It is a short collection of information (e.g., text and graphics), in 4--5-pages PPT (with the first page presenting the title and the authors), to convey the research problem and the kernel findings, to provide readers with a quick overview of the article. The highlights describe the essence of the research (e.g., research problem, kernel contribution, results or conclusions) and highlight what is distinctive about it.
+
+Highlights may be displayed online in http://www.springer.com/journal/11390, but will not appear in the article PDF file or print.
+
+\subsection{Data Sharing}
+
+If the paper has research data that is shareable by other researchers, please use a footnote to present the way to access it. Besides, it is encouraged to submit the data to a Chinese data repository, e.g., ScienceDB. ScienceDB is a public and non-profit generalist data repository developed and maintained by the Computer Network Information Center, Chinese Academy of Sciences. All the delivered datasets on ScienceDB is under CC0 or CC BY 4.0 conditions. Meanwhile, DOI is assigned to each dataset by the repository for citation and access.
+
+\section{After Acceptance}
+
+{\it Copyright Transfer}. Authors will be asked to transfer copyright of the article to the Publisher (or grant the Publisher exclusive publication and dissemination rights). This will ensure the widest possible protection and dissemination of information under copyright laws.
+
+{\it Proof Reading}. The purpose of the proof is to check for typesetting or conversion errors and the completeness and accuracy of the text, tables and figures. Substantial changes in content, e.g., new results, corrected values, title and authorship, are not allowed without the approval of the Editor.
+
+\section{Ethical Responsibilities of Authors}
+
+{\it Important Note}. The journal uses software to screen for plagiarism.
+
+The journal is committed to upholding the integrity of the scientific record. It follows the Committee on Publication Ethics (COPE) guidelines to deal with potential acts of misconduct.
+
+JCST assumes that material submitted to it is properly available for general dissemination for the readership of JCST. It is the responsibility of the authors, not JCST, to determine if disclosure of their material requires the prior consent of other parties. Authors wishing to include figures, tables, or text passages that have already been published elsewhere are required to obtain permission from the copyright owner(s) for both the print and online format and to include evidence that such permission has been granted when submitting their papers. Any material received without such evidence will be assumed to originate from the authors.
+
+Authors should refrain from misrepresenting research results which could damage the trust in the journal, the professionalism of scientific authorship, and ultimately the entire scientific endeavour. Maintaining integrity of the research and its presentation can be achieved by following the rules of good scientific practice, which include:
+
+$\bullet$ The manuscript has not been submitted to more than one journal for simultaneous consideration.
+
+$\bullet$ The manuscript has not been published previously (partly or in full), unless the new work concerns an expansion of previous work (please provide transparency on the re-use of material to avoid the hint of text-recycling (``self-plagiarism'')).
+
+$\bullet$ A single study is not split up into several parts to increase the quantity of submissions and submitted to various journals or to one journal over time (e.g. ``salami-publishing'').
+
+$\bullet$ No data have been fabricated or manipulated (including images) to support your conclusions
+
+$\bullet$ No data, text, or theories by others are presented as if they were the author's own (``plagiarism''). Proper acknowledgements to other works must be given (this includes material that is closely copied (near verbatim), summarized and/or paraphrased), quotation marks are used for verbatim copying of material, and permissions are secured for material that is copyrighted.
+
+$\bullet$ Consent to submit has been received explicitly from all co-authors, as well as from the responsible authorities --- tacitly or explicitly --- at the institute/organization where the work has been carried out, before the work is submitted.
+
+$\bullet$ Authors whose names appear on the submission have contributed sufficiently to the scientific work and therefore share collective responsibility and accountability for the results.
+
+$\bullet$ Authors are strongly advised to ensure the correct author group, corresponding author, and order of authors at submission. Changes of authorship or in the order of authors are not accepted after acceptance of a manuscript.
+
+$\bullet$ Adding and/or deleting authors at revision stage may be justifiably warranted. A letter must accompany the revised manuscript to explain the role of the added and/or deleted author(s). Further documentation may be required to support your request.
+
+$\bullet$ Upon request authors should be prepared to send relevant documentation or data in order to verify the validity of the results. This could be in the form of raw data, samples, records, etc. Sensitive information in the form of confidential proprietary data is excluded.
+
+If there is a suspicion of misconduct, the journal will carry out an investigation following the COPE guidelines. If, after investigation, the allegation seems to raise valid concerns, the accused author will be contacted and given an opportunity to address the issue. If misconduct has been established beyond reasonable doubt, this may result in the Editor-in-Chief's implementation of the following measures, including, but not limited to:
+
+$\bullet$ If the article is still under consideration, it may be rejected and returned
+to the author.
+
+$\bullet$ If the article has already been published online, depending on the nature
+and severity of the infraction, either an erratum will be placed with the
+article or in severe cases complete retraction of the article will occur.
+The reason must be given in the published erratum or retraction note. Please
+note that retraction means that the paper is maintained on the platform,
+watermarked "retracted" and explanation for the retraction is provided in a
+note linked to the watermarked article.
+
+$\bullet$ The author's institution may be informed.
+
+\section{About the Use of Artificial Intelligence\\ Generated Content (AIGC)}
+
+According to the COPE position statement on AI tools, AIGC cannot perform the role of authors and cannot be listed as authors. The use of AIGC should be fully and accurately disclosed and stated. The following points should be clearly specified: the user; the AI technology or system (with version number stated); the time and date of use; the prompts and questions used to generate the text; the parts of the text written or co-written by AIGC; the ideas in the paper generated by AIGC. If any part of the manuscript was written using such tools, this must be described in the Methods or Acknowledgments section in an open, transparent, and detailed manner. For more details, please refer to: Guideline on the Boundaries of Usage in Academic Publishing, and the template of Disclosure and Statement of the Use of AIGC is also available online\jz{2}{\href{https://jcst.ict.ac.cn/Download_Templates}{https://jcst.ict.ac.cn/Download\_Templates}, Dec. 2023.}.
+
+
+\section{English Language Editing}
+
+For editors and reviewers to accurately assess the work presented in your manuscript you need to ensure the English language is of sufficient quality to be understood. If you need help with writing in English you should consider:
+
+$\bullet$ asking a colleague who is a native English speaker to review your manuscript for clarity;
+
+$\bullet$ visiting the English language tutorial which covers the common mistakes when writing in English;
+
+$\bullet$ using a professional language editing service where editors will improve the English to ensure that your meaning is clear and  identify problems that require your review.
+
+Please note that the use of a language editing service is not a requirement for publication in this journal and does not imply or guarantee that the article will be selected for peer review or accepted.
+
+If your manuscript is accepted it will be checked by our editors for spelling and formal style before publication.
+
+\section{[\textcolor{blue}{last section}] Conclusions}
+
+Although a conclusion may review the main points of the paper, do not replicate the abstract as the conclusion. A conclusion might elaborate on the importance and results of the work, and/or suggest applications and extensions.
+
+\section*{Acknowledgement(s)}
+
+Upon acceptance of the paper, authors may add acknowledgement of people, grants, funds, etc., which should be placed in a separate section. The names of funding organizations should be written in full.
+
+\section*{Conflict of Interest}
+
+The authors declare that they have no conflict of interest.
+
+[\textcolor{blue}{The references should be listed at the end of the manuscript and numbered in the order they are referred to in the text.}]
+
+\begin{thebibliography}{99}
+\footnotesize
+\itemsep=-3pt plus.2pt minus.2pt
+\baselineskip=14pt plus.2pt minus.2pt
+\bibitem{1}Sayah J Y, Kime C R. Test scheduling in high performance VLSI system implementations. {\it IEEE Trans. Computers}, 1992, 41(1): 52-67. DOI: 10.1109/12.123376. [\textcolor{blue}{example for journal paper}]
+
+\bibitem{2} Gordon Plotkin. A semantics for type checking. In {\it Lecture Notes in Computer Science 526,} Ito T, Meyer A R (eds.), Springer-Verlag, 1991, pp.1-17. [\textcolor{blue}{example for book chapter}]
+
+\bibitem{3} Geddes K O, Czapor S R, Labahn G. Algorithms for Computer Algebra. Boston: Kluwer, 1992. [\textcolor{blue}{example for book}]
+
+\bibitem{4} Babi\'{c} D, Martignoni L, McCamant S, Song D. Statically directed dynamic automated test generation. In {\it Proc. the 20th Int. Symp. Software Testing and Analysis}, Jul. 2011, pp.12-22. DOI: 10.1145/2001420.2001423. [\textcolor{blue}{example for conference}]
+
+\bibitem{5} Harris M J. Real-time cloud simulation and rendering [Ph.D. Thesis]. Department of Computer Science, The University of North Carolina at Chapel Hill, 2003. [\textcolor{blue}{example for thesis}]
+
+\bibitem{6} Jurczyk M, Coldwind G. Identifying and exploiting windows kernel race conditions via memory access patterns. Technical Report, Google Research, 2013. http://pdfs.semanticscholar.org/ca60/2e7193f159a56a3559-f08b677abfba60beb2.pdf, Mar. 2018. [\textcolor{blue}{example for technical report}]
+
+\bibitem{7} Gipp B, Meuschke N, Gernandt A. Decentralized trusted timestamping using the crypto currency Bitcoin. arXiv:1502.04015, 2015. https://arxiv.org/abs/1502.04015, May. 2018. [\textcolor{blue}{example for arXiv document}]
+
+\bibitem{8} Tong Y, Chen L, Zhou Z, JagadishH V, Shou L, Lv W. SLADE: A smart large-scale task decomposer in crowdsourcing. {\it IEEE Transactions on Knowledge and Data Engineering}. DOI:10.1109/TKDE.2018.2797962. (preprint) [\textcolor{blue}{example for preprint}]
+
+\end{thebibliography}
+
+\vspace{5mm}
+
+\noindent\parbox{8.3cm}{\parpic{\includegraphics{photo.eps}}{\small\quad {\bf First Author [\textcolor{blue}{First-Name Surname}]}  \textcolor{blue}{Biographies should be limited to one paragraph consisting of sequentially ordered list of degrees, including the specialties and years achieved; sequentially ordered places of employ concluding with current employment; association with any refereed journals or conferences; major professional and/or academic achievements, i.e., best paper awards, etc.; current research interests. The resolution of the author' photo should be 600 dpi.}] }\\[1mm]}
+
+\noindent\parbox{8.3cm}{\parpic{\includegraphics{photo.eps}}{\small\quad {\bf second Author [First-Name Surname]}  Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content] }\\[1mm]}
+
+\noindent\parbox{8.3cm}{\parpic{\includegraphics{photo.eps}}{\small\quad {\bf third Author [First-Name Surname]}  Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content] }\\[1mm]}
+
+
+\label{last-page}
+\end{multicols}
+\label{last-page}
+\end{document}
+
